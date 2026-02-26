@@ -1,35 +1,23 @@
-import java.util.Scanner;   // MUST be at the top
+import java.util.Scanner;
 
-public class PalindromeChecker {
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
 
-    public static boolean isPalindrome(String input) {
-        String cleaned = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String rev = "";
 
-        int left = 0;
-        int right = cleaned.length() - 1;
-
-        while (left < right) {
-            if (cleaned.charAt(left) != cleaned.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
+        // Reverse the string using for loop
+        for(int i = str.length() - 1; i >= 0; i--) {
+            rev = rev + str.charAt(i);
         }
-        return true;
-    }
 
-    public static void main(String[] args) {   // also fix this
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter text:");
-        String input = scanner.nextLine();
-
-        if (isPalindrome(input)) {
-            System.out.println("Palindrome!");
+        // Compare original and reversed string
+        if(str.equals(rev)) {
+            System.out.println("It is a Palindrome");
         } else {
-            System.out.println("Not a palindrome.");
+            System.out.println("It is Not a Palindrome");
         }
-
-        scanner.close();
     }
 }
