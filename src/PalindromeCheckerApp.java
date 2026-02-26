@@ -1,6 +1,6 @@
 // UC1 - Palindrome Checker Application (Basic Version)
 
-public class UseCase1PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     // Main method - Entry point of Java program
     public static void main(String[] args) {
